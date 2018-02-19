@@ -1,0 +1,12 @@
+C:\Users\ankit\source\repos\GoogleAuth\GoogleAuth\bin\Any CPU\Release\netcoreapp2.0\GoogleAuth.deps.json
+C:\Users\ankit\source\repos\GoogleAuth\GoogleAuth\bin\Any CPU\Release\netcoreapp2.0\GoogleAuth.runtimeconfig.json
+C:\Users\ankit\source\repos\GoogleAuth\GoogleAuth\bin\Any CPU\Release\netcoreapp2.0\GoogleAuth.runtimeconfig.dev.json
+C:\Users\ankit\source\repos\GoogleAuth\GoogleAuth\bin\Any CPU\Release\netcoreapp2.0\GoogleAuth.dll
+C:\Users\ankit\source\repos\GoogleAuth\GoogleAuth\bin\Any CPU\Release\netcoreapp2.0\GoogleAuth.pdb
+C:\Users\ankit\source\repos\GoogleAuth\GoogleAuth\obj\Any CPU\Release\netcoreapp2.0\GoogleAuth.csprojResolveAssemblyReference.cache
+C:\Users\ankit\source\repos\GoogleAuth\GoogleAuth\obj\Any CPU\Release\netcoreapp2.0\GoogleAuth.csproj.CoreCompileInputs.cache
+C:\Users\ankit\source\repos\GoogleAuth\GoogleAuth\obj\Any CPU\Release\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\ankit\source\repos\GoogleAuth\GoogleAuth\obj\Any CPU\Release\netcoreapp2.0\GoogleAuth.AssemblyInfoInputs.cache
+C:\Users\ankit\source\repos\GoogleAuth\GoogleAuth\obj\Any CPU\Release\netcoreapp2.0\GoogleAuth.AssemblyInfo.cs
+C:\Users\ankit\source\repos\GoogleAuth\GoogleAuth\obj\Any CPU\Release\netcoreapp2.0\GoogleAuth.dll
+C:\Users\ankit\source\repos\GoogleAuth\GoogleAuth\obj\Any CPU\Release\netcoreapp2.0\GoogleAuth.pdb
