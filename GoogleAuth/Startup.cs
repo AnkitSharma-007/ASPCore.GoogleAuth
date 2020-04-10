@@ -38,12 +38,14 @@ namespace GoogleAuth
                 googleOptions.ClientId = Configuration["Authentication:Google:ClientId"];
                 googleOptions.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
             });
+            services.AddOptions();
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
-            services.AddControllers();
+            services.AddControllers().ConfigureApiBehaviorOptions(a => a.SuppressMapClientErrors = true);
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddMvc().SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Latest);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -67,12 +69,11 @@ namespace GoogleAuth
 
             app.UseEndpoints(e =>
             {
+                e.MapControllers();
+                e.MapDefaultControllerRoute();
                 e.MapRazorPages();
                 e.MapControllers();
-                e.MapControllerRoute("default", "{controller=Home}/action=Index/{id?}")
-                    .RequireAuthorization(); ;
-            }
-            );
+            });
 
 
 
