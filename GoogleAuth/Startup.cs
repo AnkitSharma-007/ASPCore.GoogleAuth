@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using GoogleAuth.Data;
 using GoogleAuth.Models;
 using GoogleAuth.Services;
-
+using Microsoft.Extensions.Hosting;
 namespace GoogleAuth
 {
     public class Startup
@@ -38,19 +38,22 @@ namespace GoogleAuth
                 googleOptions.ClientId = Configuration["Authentication:Google:ClientId"];
                 googleOptions.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
             });
+            services.AddOptions();
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
-
-            services.AddMvc();
+            services.AddControllers().ConfigureApiBehaviorOptions(a => a.SuppressMapClientErrors = true);
+            services.AddControllersWithViews();
+            services.AddRazorPages();
+            services.AddMvc().SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Latest);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
-                app.UseBrowserLink();
+                //app.UseBrowserLink();
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
             }
@@ -60,15 +63,20 @@ namespace GoogleAuth
             }
 
             app.UseStaticFiles();
-
+            app.UseRouting();
+            app.UseAuthorization();
             app.UseAuthentication();
 
-            app.UseMvc(routes =>
+            app.UseEndpoints(e =>
             {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                e.MapControllers();
+                e.MapDefaultControllerRoute();
+                e.MapRazorPages();
+                e.MapControllers();
             });
+
+
+
         }
     }
 }
